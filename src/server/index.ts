@@ -20,7 +20,7 @@ const angularApp = new AngularNodeAppEngine();
  * Uncomment and define endpoints as necessary.
  */
 
-app.use('/api/**', router);
+app.use('/api', router);
 
 /**
  * Serve static files from /browser
