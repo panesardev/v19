@@ -7,6 +7,7 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { router } from './router';
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -19,11 +20,7 @@ const angularApp = new AngularNodeAppEngine();
  * Uncomment and define endpoints as necessary.
  */
 
-app.get('/api/**', (request, response) => {
-  response.json({
-    message: 'hello world',
-  });
-});
+app.use('/api/**', router);
 
 /**
  * Serve static files from /browser
