@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "public": true,
+  "name": "plutonium-v19",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ],
+  "functions": {
+    "api/index.mjs": {
+      "includeFiles": "dist/plutonium-v19/**"
+    }
+  }
+}
